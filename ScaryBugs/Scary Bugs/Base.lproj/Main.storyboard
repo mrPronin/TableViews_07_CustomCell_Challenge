@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="wel-0G-865">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Scary Bugs-->
@@ -13,21 +14,67 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BugCell" textLabel="LwT-a2-l9h" detailTextLabel="wxj-7F-HEU" style="IBUITableViewCellStyleSubtitle" id="yY6-u9-1wP">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BugCell" rowHeight="60" id="yY6-u9-1wP" customClass="ScaryBugCell" customModule="Scary_Bugs" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yY6-u9-1wP" id="65C-N5-tbH">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="59.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="EvC-JE-E9e">
+                                            <rect key="frame" x="8" y="0.0" width="584" height="60"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bee.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="m4M-si-Ia0">
+                                                    <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="60" id="PLN-hS-ZIg"/>
+                                                        <constraint firstAttribute="width" constant="60" id="q0B-Wh-8aN"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bee" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fs1-zF-FEL">
+                                                    <rect key="frame" x="68" y="12" width="485" height="38"/>
+                                                    <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="24"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shockedface2_full.png" translatesAutoresizingMaskIntoConstraints="NO" id="KsJ-q7-yU5">
+                                                    <rect key="frame" x="561" y="19" width="23" height="23"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="23" id="5BF-aB-d8H"/>
+                                                        <constraint firstAttribute="width" constant="23" id="hwB-na-Fva"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="EvC-JE-E9e" firstAttribute="leading" secondItem="65C-N5-tbH" secondAttribute="leading" constant="8" id="4ap-ep-rSV"/>
+                                        <constraint firstItem="EvC-JE-E9e" firstAttribute="top" secondItem="65C-N5-tbH" secondAttribute="topMargin" constant="-8" id="UwE-dx-HN0"/>
+                                        <constraint firstAttribute="trailing" secondItem="EvC-JE-E9e" secondAttribute="trailing" constant="8" id="dub-Cs-RfA"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="EvC-JE-E9e" secondAttribute="bottom" constant="-8.5" id="ml6-5g-rge"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="bugImageView" destination="m4M-si-Ia0" id="Nzk-6o-oeK"/>
+                                    <outlet property="bugNameLabel" destination="fs1-zF-FEL" id="fqz-1y-P2w"/>
+                                    <outlet property="howScaryImageView" destination="KsJ-q7-yU5" id="1jM-Il-E1r"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewRowCell" textLabel="I3b-2H-EQe" detailTextLabel="AzV-sz-qSz" style="IBUITableViewCellStyleSubtitle" id="vwh-T4-GKU">
+                                <rect key="frame" x="0.0" y="152" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vwh-T4-GKU" id="lwB-xE-Hxf">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LwT-a2-l9h">
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="I3b-2H-EQe">
                                             <rect key="frame" x="15" y="6" width="31.5" height="19.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wxj-7F-HEU">
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="AzV-sz-qSz">
                                             <rect key="frame" x="15" y="25.5" width="40.5" height="13.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
@@ -68,4 +115,8 @@
             <point key="canvasLocation" x="287" y="977"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bee.jpg" width="320" height="320"/>
+        <image name="shockedface2_full.png" width="23" height="23"/>
+    </resources>
 </document>

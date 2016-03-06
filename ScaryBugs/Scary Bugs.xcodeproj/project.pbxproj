@@ -35,6 +35,7 @@
 		A2A3BCE81C81AA6A006BE4BC /* wolfSpider.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A2A3BCCE1C81AA6A006BE4BC /* wolfSpider.jpg */; };
 		A2CF3E221C81C7E5004D0E6F /* BugSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CF3E211C81C7E5004D0E6F /* BugSection.swift */; };
 		A2CF3E241C81C916004D0E6F /* ScaryBugsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CF3E231C81C916004D0E6F /* ScaryBugsTableViewController.swift */; };
+		A2F238F71C8C39270005D5BB /* ScaryBugCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F238F61C8C39270005D5BB /* ScaryBugCell.swift */; };
 		D34F180C1BC4506900A09B8C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34F180B1BC4506900A09B8C /* AppDelegate.swift */; };
 		D34F18111BC4506900A09B8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D34F180F1BC4506900A09B8C /* Main.storyboard */; };
 		D34F18131BC4506900A09B8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D34F18121BC4506900A09B8C /* Assets.xcassets */; };
@@ -70,6 +71,7 @@
 		A2A3BCCE1C81AA6A006BE4BC /* wolfSpider.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wolfSpider.jpg; sourceTree = "<group>"; };
 		A2CF3E211C81C7E5004D0E6F /* BugSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BugSection.swift; sourceTree = "<group>"; };
 		A2CF3E231C81C916004D0E6F /* ScaryBugsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScaryBugsTableViewController.swift; sourceTree = "<group>"; };
+		A2F238F61C8C39270005D5BB /* ScaryBugCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScaryBugCell.swift; sourceTree = "<group>"; };
 		D34F18081BC4506900A09B8C /* Scary Bugs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Scary Bugs.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D34F180B1BC4506900A09B8C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D34F18101BC4506900A09B8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				A2A3BCE91C81ADE4006BE4BC /* Model */,
 				D34F180B1BC4506900A09B8C /* AppDelegate.swift */,
 				A2CF3E231C81C916004D0E6F /* ScaryBugsTableViewController.swift */,
+				A2F238F61C8C39270005D5BB /* ScaryBugCell.swift */,
 				D34F180F1BC4506900A09B8C /* Main.storyboard */,
 				A2A3BCB41C81AA6A006BE4BC /* Challenge Resources */,
 				D34F18121BC4506900A09B8C /* Assets.xcassets */,
@@ -260,6 +263,7 @@
 				D34F180C1BC4506900A09B8C /* AppDelegate.swift in Sources */,
 				A2CF3E221C81C7E5004D0E6F /* BugSection.swift in Sources */,
 				A2A3BCE11C81AA6A006BE4BC /* ScaryBug.swift in Sources */,
+				A2F238F71C8C39270005D5BB /* ScaryBugCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

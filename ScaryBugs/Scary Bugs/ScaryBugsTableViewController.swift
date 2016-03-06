@@ -20,6 +20,8 @@ class ScaryBugsTableViewController: UITableViewController {
         navigationItem.rightBarButtonItem = editButtonItem()
         setupBugs()
         tableView.allowsSelectionDuringEditing = true
+        tableView.estimatedRowHeight = 60.0
+        tableView.rowHeight = UITableViewAutomaticDimension
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,24 +47,29 @@ class ScaryBugsTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("BugCell", forIndexPath: indexPath)
+        let cell: UITableViewCell
         let bugSection = bugSections[indexPath.section]
         
         if indexPath.row >= bugSection.bugs.count && editing {
+            cell = tableView.dequeueReusableCellWithIdentifier("NewRowCell", forIndexPath: indexPath)
             cell.textLabel?.text = "Add Bug"
             cell.detailTextLabel?.text = nil
             cell.imageView?.image = nil
         } else {
             let bug = bugSection.bugs[indexPath.row]
-            cell.textLabel?.text = bug.name
-            cell.detailTextLabel?.text = ScaryBug.scaryFactorToString(bug.howScary)
-            guard let imageView = cell.imageView else {
-                return cell
+            cell = tableView.dequeueReusableCellWithIdentifier("BugCell", forIndexPath: indexPath)
+            let bugCell = cell as! ScaryBugCell
+            bugCell.bugNameLabel.text = bug.name
+            
+            if bug.howScary.rawValue > ScaryFactor.AverageScary.rawValue {
+                bugCell.howScaryImageView.image = UIImage(named: "shockedface2_full")
+            } else {
+                bugCell.howScaryImageView.image = UIImage(named: "shockedface2_empty")
             }
             if let bugImage = bug.image {
-                imageView.image = bugImage
+                bugCell.bugImageView.image = bugImage
             } else {
-                imageView.image = nil
+                bugCell.bugImageView.image = nil
             }
         }
 
